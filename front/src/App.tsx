@@ -82,14 +82,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="main">
+      <main>
         <div className="suitcase-container">
           <Suitcase itemList={items} />
         </div>
         <div className="checklist-container">
           <Checklist itemList={items} itemToggle={itemToggle} />
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   )

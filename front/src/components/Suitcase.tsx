@@ -5,6 +5,11 @@ import { Item } from "../types/Item.t"
 const Suitcase = ({ itemList }: { itemList: Item[] }) => {
     return (
         <div className="suitcase-inner">
+            <div className="suitcase-front"></div>
+            <div className="suitcase-left"></div>
+            <div className="suitcase-right"></div>
+            <div className="suitcase-back"></div>
+
             {itemList
                 .filter(item => item.checked)
                 .map(item => {

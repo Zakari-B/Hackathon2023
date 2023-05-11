@@ -1,47 +1,89 @@
-.suitcase-inner {
-  min-width: calc(
-    (
-      var(--suitcaseColumns) * var(--suitcaseContentMin) +
-        var(--suitcaseColumns) * var(--suitcaseGap) + var(--suitcasePadding) * 2 +
-        var(--suitcaseBorderSize) * 2
-    )
-  );
-  width: 80%;
-  max-width: calc(
-    (
-      var(--suitcaseColumns) * var(--suitcaseContentMax) +
-        var(--suitcaseColumns) * var(--suitcaseGap) + var(--suitcasePadding) * 2 +
-        var(--suitcaseBorderSize) * 2
-    )
-  );
-  height: 50%;
-  background-color: rgb(75, 51, 37);
-  border: var(--suitcaseBorderSize) solid rgb(44, 42, 42);
-  border-radius: 25px;
-  padding: var(--suitcasePadding);
-  display: grid;
-  grid-template-columns: repeat(
-    var(--suitcaseColumns),
-    minmax(var(--suitcaseContentMin), var(--suitcaseContentMax))
-  );
-  grid-template-rows: repeat(
-    var(--suitcaseRows),
-    minmax(var(--suitcaseContentMin), var(--suitcaseContentMax))
-  );
-  gap: var(--suitcaseGap);
+* {
+  transform-style: preserve-3d;
+}
+.suitcase-container {
+  perspective: 1000px;
 }
 
-.suitcase-inner > .item {
+
+.suitcase-inner {
+  --width: 500px;
+  --suitcaseColumns: 4;
+  --suitcaseRows: 3;
+  --height: 350px;
+  --depth:50px;
+  display: grid;
+  width: var(--width);
+  height: var(--height);
+  grid-template-columns: repeat(var(--suitcaseColumns), 1fr);
+  grid-template-rows: repeat(var(--suitcaseRows), 1fr);
+  background-color: var(--secondary);
+
+  transform: rotateX(45deg);
+  position: relative;
+
+}
+
+
+.suitcase-front {
+  background-color: var(--dark);
+  width: 100%;
+  height: var(--depth);
+  position: absolute;
+  bottom: calc(var(--depth) * -1);
+  left: 0;
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+
+.suitcase-inner .item {
   max-width: 100%;
   max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
-  /* width: calc(); */
+  transform-origin: bottom;
+  margin: 0%;
+  transform: rotateX(90%);
 }
 
-.suitcase-inner > .item > img {
+.suitcase-inner .item>img {
   width: 100%;
   aspect-ratio: 1/1;
+}
+
+.suitcase-left {
+  width: var(--depth);
+  height: var(--height);
+
+  background-color: var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+.suitcase-right {
+  width: var(--depth);
+  height: var(--height);
+
+  background-color: var(--dark);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+.suitcase-back {
+  width: var(--width);
+  height: var(--depth);
+
+  background-color: var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
 }

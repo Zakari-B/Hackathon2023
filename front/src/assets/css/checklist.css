@@ -3,7 +3,7 @@
   height: 95%;
   width: 95%;
   font-family: cursive;
-  color: var(--text-dark);
+  color: var(--dark);
   font-size: clamp(1rem, var(--fontSize), 1.75rem);
   padding: 5%;
   border: 1px solid gray;

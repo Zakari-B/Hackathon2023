@@ -4,15 +4,7 @@
   --footerHeight: 5vh;
   --fontSize: 1.5vw;
   --background-primary: rgb(230, 245, 255);
-  --background-secondary: rgb(30, 30, 30, 0.8);
-  --text-light: rgb(245, 245, 245);
-  --text-dark: (25, 25, 25, 0.9);
-
-  --suitcaseBorderSize: 5px;
-  --suitcasePadding: 25px;
-  --suitcaseContentMin: 75px;
-  --suitcaseContentMax: 150px;
-  --suitcaseColumns: 4;
-  --suitcaseRows: 3;
-  --suitcaseGap: 5px;
+  --secondary: rgba(124, 115, 110, 0.8);
+  --light: rgb(245, 245, 245);
+  --dark: rgb(25, 25, 25, 0.9);
 }
