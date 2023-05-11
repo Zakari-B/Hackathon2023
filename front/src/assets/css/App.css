@@ -16,10 +16,11 @@ body {
   min-height: 100vh;
 }
 
-.main {
+main {
   height: calc(100vh - var(--navHeight) - var(--footerHeight));
   display: flex;
 }
+
 .checklist-container {
   display: flex;
   justify-content: center;
