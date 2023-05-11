@@ -1,31 +1,31 @@
-* {
-  transform-style: preserve-3d;
-}
+
 .suitcase-container {
   perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 
 .suitcase-inner {
+  transform-style: preserve-3d;
   --width: 500px;
   --suitcaseColumns: 4;
   --suitcaseRows: 3;
   --height: 350px;
-  --depth:50px;
+  --depth: 80px;
   display: grid;
   width: var(--width);
   height: var(--height);
   grid-template-columns: repeat(var(--suitcaseColumns), 1fr);
   grid-template-rows: repeat(var(--suitcaseRows), 1fr);
   background-color: var(--secondary);
-
+  box-shadow: 0 0  16px inset var(--dark);
   transform: rotateX(45deg);
   position: relative;
 
 }
 
-
 .suitcase-front {
+
   background-color: var(--dark);
   width: 100%;
   height: var(--depth);
@@ -53,6 +53,7 @@
 }
 
 .suitcase-left {
+
   width: var(--depth);
   height: var(--height);
 
@@ -65,6 +66,8 @@
 }
 
 .suitcase-right {
+  transform-style: preserve-3d;
+
   width: var(--depth);
   height: var(--height);
 
@@ -77,6 +80,8 @@
 }
 
 .suitcase-back {
+  transform-style: preserve-3d;
+
   width: var(--width);
   height: var(--depth);
 
@@ -85,5 +90,5 @@
   top: 0;
   left: 0;
   transform: rotateX(90deg);
-  transform-origin: bottom;
+  transform-origin: top;
 }
