@@ -1,0 +1,47 @@
+.suitcase-inner {
+  min-width: calc(
+    (
+      var(--suitcaseColumns) * var(--suitcaseContentMin) +
+        var(--suitcaseColumns) * var(--suitcaseGap) + var(--suitcasePadding) * 2 +
+        var(--suitcaseBorderSize) * 2
+    )
+  );
+  width: 80%;
+  max-width: calc(
+    (
+      var(--suitcaseColumns) * var(--suitcaseContentMax) +
+        var(--suitcaseColumns) * var(--suitcaseGap) + var(--suitcasePadding) * 2 +
+        var(--suitcaseBorderSize) * 2
+    )
+  );
+  height: 50%;
+  background-color: rgb(75, 51, 37);
+  border: var(--suitcaseBorderSize) solid rgb(44, 42, 42);
+  border-radius: 25px;
+  padding: var(--suitcasePadding);
+  display: grid;
+  grid-template-columns: repeat(
+    var(--suitcaseColumns),
+    minmax(var(--suitcaseContentMin), var(--suitcaseContentMax))
+  );
+  grid-template-rows: repeat(
+    var(--suitcaseRows),
+    minmax(var(--suitcaseContentMin), var(--suitcaseContentMax))
+  );
+  gap: var(--suitcaseGap);
+}
+
+.suitcase-inner > .item {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  /* width: calc(); */
+}
+
+.suitcase-inner > .item > img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}

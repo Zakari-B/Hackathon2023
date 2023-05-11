@@ -1,0 +1,21 @@
+{
+  "name": "hackathon2023",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm i && npm --prefix ./front i && cd ./back && composer install && \"./bin/console d:d:d --force\"",
+    "setuptest": "concurrently \"cd ./back/bin && console d:d:d --force\"",
+    "setuptest2": "concurrently \"cd ./back/bin && console d:d:d --force\"",
+    "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./front run dev\" \"cd ./back && symfony server:start\"",
+    "dev-front": "npm --prefix ./front run dev",
+    "dev-back": "cd ./back && symfony server:start",
+    "stop-back": "cd ./back && symfony server:stop",
+    "lint": "npm --prefix ./front run lint",
+    "fix": "npm --prefix ./front run fix"
+  },
+  "author": "formateurs",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

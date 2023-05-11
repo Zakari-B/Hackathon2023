@@ -1,0 +1,27 @@
+header {
+  width: 100vw;
+  min-width: var(--minWidth);
+  background-color: var(--background-secondary);
+  color: var(--text-light);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2vw;
+  border: 1px solid red;
+  height: var(--navHeight);
+}
+
+nav > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 80%;
+  aspect-ratio: 1/1;
+}

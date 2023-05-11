@@ -1,0 +1,9 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--footerHeight);
+  border: 1px solid red;
+  background-color: var(--background-secondary);
+  color: var(--text-light);
+}

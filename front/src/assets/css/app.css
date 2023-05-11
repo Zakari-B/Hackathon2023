@@ -1,0 +1,44 @@
+@import "./reset.css";
+@import "./nav.css";
+@import "./footer.css";
+/* @import "./vars.css"; */
+
+body {
+  background-color: var(--background-primary);
+  color: black;
+  min-width: 768px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.main {
+  height: calc(100vh - var(--navHeight) - var(--footerHeight));
+  display: flex;
+}
+.checklist-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  border: 1px solid green;
+}
+
+.suitcase-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  border: 1px solid blue;
+  min-width: calc(
+    (
+      var(--suitcaseColumns) * var(--suitcaseContentMin) +
+        var(--suitcaseColumns) * var(--suitcaseGap) + var(--suitcasePadding) * 2 +
+        var(--suitcaseBorderSize) * 2 + 100px
+    )
+  );
+}
