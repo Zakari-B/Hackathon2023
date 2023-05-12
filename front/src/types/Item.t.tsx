@@ -1,6 +1,11 @@
 export type Item = {
+    id: number;
     name: string;
-    img: string;
-    qty: number;
+    image: string;
+    duration: number;
+    quantity?: number;
+}
+
+export type SuitcaseItem = Item & {
     checked: boolean;
 }
