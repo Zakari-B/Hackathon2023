@@ -1,6 +1,9 @@
 ## Hackaton 2023 : Vacances
 
-Start by running `npm run setup` in the root folder of the project, then edit the .env file in the `back` folder and add your DB credentials.
+Start by running `npm run setup` in the root folder of the project, then:
+
+- Copy the .env file in the `back` folder and rename the copy to `.env.local`. Add your local DB credentials in this file.
+- Copy the .env.sample in the `front` folder and rename the copy to `.env`. There should be no need to modify it unless you changed the ports used by this application.
 
 Then, run the following commands in the `back` folder to prepare the DB :
 `bin/console d:d:d --force`
