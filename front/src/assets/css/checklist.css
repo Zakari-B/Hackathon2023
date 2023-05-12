@@ -36,6 +36,10 @@
   accent-color: var(--success);
 }
 
+.checklist input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+} 
+
 .area-select {
   margin-bottom: 1rem;
   padding: 0.5rem;
