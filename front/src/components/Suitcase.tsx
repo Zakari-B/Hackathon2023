@@ -1,8 +1,7 @@
-import React from 'react'
 import "@assets/css/suitcase.css"
-import { Item } from "../types/Item.t"
+import { SuitcaseItem } from "../types/Item.t"
 
-const Suitcase = ({ itemList }: { itemList: Item[] }) => {
+const Suitcase = ({ itemList }: { itemList: SuitcaseItem[] }) => {
     return (
         <div className="suitcase-inner">
             <div className="suitcase-front"></div>
