@@ -5,7 +5,8 @@
 
 body {
   background-color: var(--background-primary);
-  background-image: url(https://img.freepik.com/free-photo/straw-hat-kept-empty-beach-chair_1252-488.jpg?w=1380&t=st=1683881136~exp=1683881736~hmac=5c08f8e518a973de04445e8e4a0814f56c1ebf97dd959805bdd90d389f05030b);
+  --bg: url(https://img.freepik.com/free-photo/arrangement-tropical-beach-vacation-accessories_23-2148131778.jpg?w=1380&t=st=1683892053~exp=1683892653~hmac=1fcea6c1f907c2e9a11704c6a72ed02e451e137e311edca658d45ba7fb9799cf);
+  background-image: var(--bg);
   background-size: cover;
   color: black;
   min-width: 768px;
@@ -34,6 +35,7 @@ main {
 .checklist-container {
   transform-style: preserve-3d;
   height: 80vh;
+  margin-top: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +43,7 @@ main {
 
 .suitcase-container {
   transform-style: preserve-3d;
+  margin-top: 25vh;
 
   display: flex;
   justify-content: center;

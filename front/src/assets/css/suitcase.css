@@ -54,6 +54,8 @@
   margin: 0%;
   transform: rotateX(90%);
   filter:drop-shadow(8px 8px 8px var(--dark));
+  animation: put 1s forwards;
+
 }
 
 .suitcase-inner .item>img {
@@ -124,7 +126,6 @@
   width: 100px;
   height: 30px;
   background: rgb(255, 200, 80);
-  z-index: 5;
   position: absolute;
   bottom: -30px;
   left: calc(50% - 50px);
@@ -132,10 +133,34 @@
   clip-path: polygon(0 0, 25% 0, 25% 50%, 75% 50%, 75% 0, 100% 0, 100% 100%, 0 100%);
 }
 
+.close {
+  background: rgb(255, 200, 80);
+  position: absolute;
+  width: 20px;
+  height: 30px; 
+  left: 15%;
+  bottom:-1px;
+  transform: rotateX(90deg) translateY(var(--depth));
+  transform-origin: bottom;
+}
+.close:last-child {
+  left: calc(75% + 20px);
 
+}
 
 @keyframes open {
   to {
     transform: translateZ(var(--depth)) rotateX(-20deg);
+  }
+}
+
+@keyframes put {
+  from {
+    transform: translateX(200px) translateZ(350px);
+    opacity: 0;
+  }
+  to {
+    transform: translateZ(0);
+    opacity: 1;
   }
 }
