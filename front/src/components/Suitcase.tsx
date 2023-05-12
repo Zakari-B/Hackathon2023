@@ -11,13 +11,13 @@ const Suitcase = ({ itemList }: { itemList: SuitcaseItem[] }) => {
             <div className="suitcase-top"></div>
             <div className="hang"></div>
             <div className="close"></div>
-            <div className="close"></div>
 
                 {itemList
                     .filter(item => item.checked)
                     .map(item => {
                         return <div className="item" key={item.name}><img src={`${item.image}`} alt="Item" /></div>
                     })}
+            <div className="close"></div>
         </div>
     )
 }

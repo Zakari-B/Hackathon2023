@@ -143,9 +143,9 @@
   transform: rotateX(90deg) translateY(var(--depth));
   transform-origin: bottom;
 }
-.close:last-child {
-  left: calc(75% + 20px);
 
+.close:last-of-type  {
+  left: calc(75% + 20px);
 }
 
 @keyframes open {
