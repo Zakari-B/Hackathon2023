@@ -1,6 +1,7 @@
 .suitcase-container {
   transform-style: preserve-3d;
   perspective: 1000px;
+  filter: drop-shadow(5px 5px 25px var(--light));
 
 }
 
@@ -26,17 +27,11 @@
 
 .suitcase-inner > :where(div:not(.item)) {
   transform-style: preserve-3d;
-
-  /* background: linear-gradient(var(--direction), var(--dark), var(--suitcase-color)); */
-  background-color: #ff8442;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url("https://img.freepik.com/free-photo/brown-creased-leather-textured-background_53876-108432.jpg?w=1380&t=st=1683889632~exp=1683890232~hmac=560590cc1974fa1c2d03b9fb54577a6bb245ce571427d4694342e9f3ee31c51b");
 }
 
 .suitcase-front {
   transform-style: preserve-3d;
-  background-color: #ff8442;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
 
   width: 100%;
   height: var(--depth);
@@ -124,6 +119,20 @@
   z-index: 3;
   animation: open 3s forwards;
 }
+
+.hang {
+  width: 100px;
+  height: 30px;
+  background: rgb(255, 200, 80);
+  z-index: 5;
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 50px);
+  transform: translateZ(50px);
+  clip-path: polygon(0 0, 25% 0, 25% 50%, 75% 50%, 75% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
 
 @keyframes open {
   to {

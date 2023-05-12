@@ -9,6 +9,7 @@ const Suitcase = ({ itemList }: { itemList: SuitcaseItem[] }) => {
             <div className="suitcase-right"></div>
             <div className="suitcase-back"></div>
             <div className="suitcase-top"></div>
+            <div className="hang"></div>
 
                 {itemList
                     .filter(item => item.checked)
