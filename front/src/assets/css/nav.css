@@ -1,15 +1,14 @@
 header {
   width: 100vw;
   min-width: var(--minWidth);
-  background-color: var(--background-secondary);
-  color: var(--text-light);
+  background-color: var(--secondary);
+  color: var(--light);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 0 2vw;
-  border: 1px solid red;
   height: var(--navHeight);
 }
 

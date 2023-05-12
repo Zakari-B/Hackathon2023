@@ -3,10 +3,11 @@
 namespace App\DataFixtures;
 
 use App\Entity\Item;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ItemFixtures extends Fixture
+class ItemFixtures extends Fixture implements DependentFixtureInterface
 {
     public const ITEMS = [
         ['name' => 'ID', 'image' => 'https://cdn-icons-png.flaticon.com/512/1726/1726620.png', 'duration' => null],
@@ -19,14 +20,22 @@ class ItemFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        foreach(self::ITEMS as $itemData) {
+        foreach(self::ITEMS as $key => $itemData) {
             $item = new Item();
             $item->setName($itemData['name']);
             $item->setImage($itemData['image']);
+            $item->setArea($this->getReference('area'. $key % 3));
             $item->setDuration($itemData['duration']);
             $manager->persist($item);
         }
 
         $manager->flush();
+    }
+
+    public function getDependencies() 
+    {
+        return [
+            AreaFixtures::class,
+        ];
     }
 }

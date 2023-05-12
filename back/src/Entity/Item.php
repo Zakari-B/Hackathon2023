@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\Get;
+use App\State\SearchProcessor;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ItemRepository;
 use ApiPlatform\Metadata\ApiFilter;
@@ -20,7 +21,9 @@ use Symfony\Component\Validator\Constraints as Assert;
         new Get(
             provider: ItemQuantityProvider::class
         ),
-        new GetCollection()
+        new GetCollection(
+            // processor: SearchProcessor::class
+        )
     ]
 )]
 class Item
@@ -46,6 +49,9 @@ class Item
 
     #[Assert\Positive()]
     private ?int $quantity = null;
+
+    #[ORM\ManyToOne(inversedBy: 'items')]
+    private ?Area $area = null;
 
     public function getId(): ?int
     {
@@ -102,6 +108,18 @@ class Item
     public function setQuantity(?int $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getArea(): ?Area
+    {
+        return $this->area;
+    }
+
+    public function setArea(?Area $area): self
+    {
+        $this->area = $area;
 
         return $this;
     }
