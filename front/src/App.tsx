@@ -22,60 +22,10 @@ function App() {
     setItems(() => listUpdate)
   } 
 
-  // const testList = [
-  //   {
-  //     "name": "socks",
-  //     "img": "duck.png",
-  //     "qty": 7
-  //   },
-  //   {
-  //     "name": "underwear",
-  //     "img": "duck.png",
-  //     "qty": 7
-  //   },
-  //   {
-  //     "name": "sunglasses",
-  //     "img": "duck.png",
-  //     "qty": 1
-  //   },
-  //   {
-  //     "name": "shoes",
-  //     "img": "duck.png",
-  //     "qty": 7
-  //   },
-  //   {
-  //     "name": "lizard",
-  //     "img": "duck.png",
-  //     "qty": 7
-  //   },
-  //   {
-  //     "name": "ball",
-  //     "img": "duck.png",
-  //     "qty": 1
-  //   },
-  //   {
-  //     "name": "bag",
-  //     "img": "duck.png",
-  //     "qty": 7
-  //   },
-  //   {
-  //     "name": "cat",
-  //     "img": "duck.png",
-  //     "qty": 7
-  //   },
-  //   {
-  //     "name": "fork",
-  //     "img": "duck.png",
-  //     "qty": 1
-  //   }
-  // ]
-
-
   useEffect(() => {
     fetch('http://localhost:8000/api/items.json')
     .then(response => response.json())
     .then(testList => {
-      
           const newList = testList.map(item => ({ ...item, checked: false }))
     setItems(() => newList);
 
