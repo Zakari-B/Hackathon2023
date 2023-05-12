@@ -1,14 +1,15 @@
 .checklist {
-  background-color: rgb(240, 240, 230);
+  background-color: var(--light);
+  background-image: url("https://www.transparenttextures.com/patterns/lined-paper.png");
+  background-size: 600px;
   height: 95%;
   width: 95%;
   font-family: cursive;
   color: var(--dark);
   font-size: clamp(1rem, var(--fontSize), 1.75rem);
-  padding: 5%;
-  border: 1px solid gray;
-  border-radius: 25px;
-  box-shadow: 5px 5px 5px rgb(20, 20, 20, 0.75);
+  padding: 2rem;
+  box-shadow: 5px 5px 10px -5px var(--dark);
+  transform: rotate(-2deg);
 }
 
 .checklist > h2 {
@@ -18,13 +19,20 @@
 }
 
 .checklist li {
+  display: flex;
+  align-items: center;
   list-style: none;
   margin: 0 0 10px 15px;
   text-indent: -4px;
+  gap: 1rem;
 }
 
-.checklist input {
-  margin-right: 1rem;
+.checklist input[type="checkbox"] {
+  --success: rgb(44, 199, 44);
+  color: var(--light);
+  width: 2rem;
+  height: 2rem;
+  accent-color: var(--success);
 }
 
 .area-select {

@@ -1,26 +1,14 @@
-header {
-  width: 100vw;
-  min-width: var(--minWidth);
-  background-color: var(--secondary);
-  color: var(--light);
-}
-
 nav {
   display: flex;
-  justify-content: space-between;
-  padding: 0 2vw;
-  height: var(--navHeight);
-}
-
-nav > div {
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  font-size: 1.25rem;
-  gap: 1.5rem;
+  padding: 1rem;
+  gap: 1rem;
+  height: var(--navHeight);
+  font-size: 2rem;
 }
 
 .logo {
-  height: 80%;
+  height: var(--navHeight);
   aspect-ratio: 1/1;
 }

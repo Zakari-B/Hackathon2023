@@ -1,13 +1,14 @@
-
 .suitcase-container {
-  perspective: 1000px;
   transform-style: preserve-3d;
+  perspective: 1000px;
+
 }
 
 
 .suitcase-inner {
   transform-style: preserve-3d;
   --width: 500px;
+  --suitcase-color: brown;
   --suitcaseColumns: 4;
   --suitcaseRows: 3;
   --height: 350px;
@@ -17,16 +18,26 @@
   height: var(--height);
   grid-template-columns: repeat(var(--suitcaseColumns), 1fr);
   grid-template-rows: repeat(var(--suitcaseRows), 1fr);
-  background-color: var(--secondary);
+  background-color: rgb(65, 14, 14);
   box-shadow: 0 0  16px inset var(--dark);
   transform: rotateX(45deg);
   position: relative;
+}
 
+.suitcase-inner > :where(div:not(.item)) {
+  transform-style: preserve-3d;
+
+  /* background: linear-gradient(var(--direction), var(--dark), var(--suitcase-color)); */
+  background-color: #ff8442;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .suitcase-front {
+  transform-style: preserve-3d;
+  background-color: #ff8442;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
 
-  background-color: var(--dark);
   width: 100%;
   height: var(--depth);
   position: absolute;
@@ -37,6 +48,8 @@
 }
 
 .suitcase-inner .item {
+  transform-style: preserve-3d;
+
   max-width: 100%;
   max-height: 100%;
   display: flex;
@@ -45,6 +58,7 @@
   transform-origin: bottom;
   margin: 0%;
   transform: rotateX(90%);
+  filter:drop-shadow(8px 8px 8px var(--dark));
 }
 
 .suitcase-inner .item>img {
@@ -53,6 +67,9 @@
 }
 
 .suitcase-left {
+  transform-style: preserve-3d;
+
+  --direction: to right;
 
   width: var(--depth);
   height: var(--height);
@@ -66,6 +83,8 @@
 }
 
 .suitcase-right {
+  --direction: to left;
+
   transform-style: preserve-3d;
 
   width: var(--depth);
@@ -91,4 +110,23 @@
   left: 0;
   transform: rotateX(90deg);
   transform-origin: top;
+}
+
+.suitcase-inner > .suitcase-top {
+  transform-style: preserve-3d;
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  top: calc(var(--height) * -1);
+  left: 0;
+  transform: translateZ(var(--depth)) rotateX(-180deg);
+  transform-origin: bottom;
+  z-index: 3;
+  animation: open 3s forwards;
+}
+
+@keyframes open {
+  to {
+    transform: translateZ(var(--depth)) rotateX(-20deg);
+  }
 }

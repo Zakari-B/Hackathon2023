@@ -5,8 +5,12 @@
 
 body {
   background-color: var(--background-primary);
+  background-image: url(https://img.freepik.com/free-photo/straw-hat-kept-empty-beach-chair_1252-488.jpg?w=1380&t=st=1683881136~exp=1683881736~hmac=5c08f8e518a973de04445e8e4a0814f56c1ebf97dd959805bdd90d389f05030b);
+  background-size: cover;
   color: black;
   min-width: 768px;
+  transform-style: preserve-3d;
+
 }
 
 #root {
@@ -14,27 +18,34 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+
 }
 
 main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  max-height: 100vh;
+  width: 100%;
   height: calc(100vh - var(--navHeight) - var(--footerHeight));
-  display: flex;
+  transform-style: preserve-3d;
+  place-items: center;
 }
 
 .checklist-container {
+  transform-style: preserve-3d;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35%;
-  border: 1px solid green;
 }
 
 .suitcase-container {
+  transform-style: preserve-3d;
+
   display: flex;
   justify-content: center;
   align-items: center;
   width: 65%;
-  border: 1px solid blue;
   min-width: calc(
     (
       var(--suitcaseColumns) * var(--suitcaseContentMin) +
