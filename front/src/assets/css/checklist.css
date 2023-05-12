@@ -6,10 +6,11 @@
   width: 95%;
   font-family: cursive;
   color: var(--dark);
-  font-size: clamp(1rem, var(--fontSize), 1.75rem);
+  font-size: clamp(0.8rem, var(--fontSize), 1.3rem);
   padding: 2rem;
   box-shadow: 5px 5px 10px -5px var(--dark);
   transform: rotate(-2deg);
+  overflow: auto;
 }
 
 .checklist > h2 {
@@ -37,4 +38,6 @@
 
 .area-select {
   margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
 }
